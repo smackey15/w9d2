@@ -13,9 +13,11 @@ class View {
         li.dataset.value = "_"
         li.dataset.row = i;
         li.dataset.col = j;
+        // li.dataset.pos = [i, j];
         ul.appendChild(li);
           }
     }
+    // debugger
   }
   
   bindEvents() {}

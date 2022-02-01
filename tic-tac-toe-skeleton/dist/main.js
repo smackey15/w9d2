@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\") // the dot denotes we start in the same folder that index.js is in\nconst Game = __webpack_require__(/*! ../../../../../ttt_node/game.js */ \"./ttt_node/game.js\")\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  const g = new Game();\n  const ttt = document.querySelector(\".ttt\")\n  const v = new View(g, ttt);\n  v.setupBoard();\n  // debugger\n});\n\n\n\n//# sourceURL=webpack://tic-tac-toe-skeleton/./src/index.js?");
+eval("const View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\") // the dot denotes we start in the same folder that index.js is in\nconst Game = __webpack_require__(/*! ../../../../../../ttt_node/game.js */ \"./ttt_node/game.js\")\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  const g = new Game();\n  const ttt = document.querySelector(\".ttt\")\n  const v = new View(g, ttt);\n  v.setupBoard();\n  // debugger\n});\n\n\n\n//# sourceURL=webpack://tic-tac-toe-skeleton/./src/index.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, el) {\n    this.game = game;\n    this.el = el;\n  }\n\n  setupBoard() {\n    const ul = document.createElement(\"ul\");\n    this.el.appendChild(ul);\n    for(let i = 0; i < 3; i++) {\n      for(let j = 0; j < 3; j++) {\n        let li = document.createElement(\"li\");\n        li.dataset.value = \"_\"\n        li.dataset.row = i;\n        li.dataset.col = j;\n        ul.appendChild(li);\n          }\n    }\n  }\n  \n  bindEvents() {}\n\n  handleClick(e) {}\n\n  makeMove(square) {}\n\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack://tic-tac-toe-skeleton/./src/ttt-view.js?");
+eval("class View {\n  constructor(game, el) {\n    this.game = game;\n    this.el = el;\n  }\n\n  setupBoard() {\n    const ul = document.createElement(\"ul\");\n    this.el.appendChild(ul);\n    for(let i = 0; i < 3; i++) {\n      for(let j = 0; j < 3; j++) {\n        let li = document.createElement(\"li\");\n        li.dataset.value = \"_\"\n        li.dataset.row = i;\n        li.dataset.col = j;\n        // li.dataset.pos = [i, j];\n        ul.appendChild(li);\n          }\n    }\n    // debugger\n  }\n  \n  bindEvents() {}\n\n  handleClick(e) {}\n\n  makeMove(square) {}\n\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack://tic-tac-toe-skeleton/./src/ttt-view.js?");
 
 /***/ }),
 
