@@ -2,10 +2,16 @@ ul {
    display: flex;
    width: 300px;
    flex-wrap: wrap;
-   /* list-style-type: none; */
+   list-style-type: none;
 }
 
 li {
     width: 80px;
+    height: 80px;
     border: 5px solid black;
+    background-color: gray;
+}
+
+li:hover {
+    background-color: yellow;
 }

@@ -2,7 +2,8 @@ class View {
   constructor(game, el) {
     this.game = game;
     this.el = el;
-  }
+    this.setupBoard();
+    }
 
   setupBoard() {
     const ul = document.createElement("ul");
@@ -11,9 +12,9 @@ class View {
       for(let j = 0; j < 3; j++) {
         let li = document.createElement("li");
         li.dataset.value = "_"
-        li.dataset.row = i;
-        li.dataset.col = j;
-        // li.dataset.pos = [i, j];
+        // li.dataset.row = i;
+        // li.dataset.col = j;
+        li.dataset.pos = [i, j];
         ul.appendChild(li);
           }
     }
@@ -21,8 +22,10 @@ class View {
   }
   
   bindEvents() {}
-
-  handleClick(e) {}
+  handleClick(e) {
+    const pos = e.target.dataset.pos;
+    this.game.playMove(pos);
+  }
 
   makeMove(square) {}
 
